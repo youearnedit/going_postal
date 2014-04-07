@@ -208,6 +208,11 @@ module GoingPostal
     match = /^(\d{4})[^\w]*(\d{3})$/.match(string)
     match.captures.join("-") if match && match[1] && match[2]
   end
+
+  def format_se_postcode(string)
+    match = /^([1-9][0-9]{2})[^\w]*(\d{2})$/.match(string)
+    match.captures.join(" ") if match && match[1] && match[2]
+  end
   
   private
   
