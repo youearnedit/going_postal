@@ -179,9 +179,11 @@ module GoingPostal
   alias format_us_postcode format_us_zipcode
   
   def format_ch_postcode(string)
-    string = string.to_s.delete(" \t\r\n")
+    string = string.to_s.gsub(/\D/, '')
     string if string =~ /^[1-9][0-9]{3}$/
   end
+  alias format_da_postcode format_ch_postcode
+  alias format_dk_postcode format_ch_postcode
   
   def format_nl_postcode(string)
     string = string.to_s.upcase.delete(" \t\r\n")
