@@ -190,6 +190,7 @@ module GoingPostal
     string = string.to_s.gsub(/\D/, '')
     string if string =~ /^[0-9]{5}$/
   end
+  alias format_de_postcode format_it_postcode
   
   def format_nl_postcode(string)
     string = string.to_s.upcase.delete(" \t\r\n")
