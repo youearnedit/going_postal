@@ -192,6 +192,7 @@ module GoingPostal
   end
   alias format_de_postcode format_it_postcode
   alias format_es_postcode format_it_postcode
+  alias format_fi_postcode format_it_postcode
   
   def format_nl_postcode(string)
     string = string.to_s.upcase.delete(" \t\r\n")
