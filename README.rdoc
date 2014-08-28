@@ -4,9 +4,9 @@ The GoingPostal mixin provides classes with postcode formatting and validation
 methods.  It does _not_ provide external verification methods such as checking
 for the existence of a postcode against the UK PAF database.
 
-== Installation
+== Install
 
-  $ gem install going_postal
+  gem 'going_postal', :git => 'https://github.com/youearnedit/going_postal'
 
 == Usage
 
