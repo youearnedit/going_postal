@@ -179,9 +179,20 @@ module GoingPostal
   alias format_us_postcode format_us_zipcode
   
   def format_ch_postcode(string)
-    string = string.to_s.delete(" \t\r\n")
+    string = string.to_s.gsub(/\D/, '')
     string if string =~ /^[1-9][0-9]{3}$/
   end
+  alias format_da_postcode format_ch_postcode
+  alias format_dk_postcode format_ch_postcode
+  alias format_at_postcode format_ch_postcode
+
+  def format_it_postcode(string)
+    string = string.to_s.gsub(/\D/, '')
+    string if string =~ /^[0-9]{5}$/
+  end
+  alias format_de_postcode format_it_postcode
+  alias format_es_postcode format_it_postcode
+  alias format_fi_postcode format_it_postcode
   
   def format_nl_postcode(string)
     string = string.to_s.upcase.delete(" \t\r\n")
@@ -192,6 +203,16 @@ module GoingPostal
   def format_pl_postcode(string)
     match = /^(\d\d)[^\w]*(\d\d\d)$/.match(string)
     match.captures.join("-") if match && match[1] && match[2]
+  end
+
+  def format_pt_postcode(string)
+    match = /^(\d{4})[^\w]*(\d{3})$/.match(string)
+    match.captures.join("-") if match && match[1] && match[2]
+  end
+
+  def format_se_postcode(string)
+    match = /^([1-9][0-9]{2})[^\w]*(\d{2})$/.match(string)
+    match.captures.join(" ") if match && match[1] && match[2]
   end
   
   private
